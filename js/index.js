@@ -10,34 +10,30 @@ function clock() {
 clock();
 setInterval(clock, 1000); /* 1초마다 clock함수 실행 */
 
-document.addEventListener('DOMContentLoaded', () => {
-  const lens = document.createElement('div');
-  lens.className = 'lens';
-  document.body.appendChild(lens);
+$(function () {
+  const $crosshair = $('.crosshair');
+  let mouseX = 0,
+    mouseY = 0;
+  let currentX = 0,
+    currentY = 0;
 
-  window.addEventListener('mousemove', (e) => {
-    const x = e.clientX;
-    const y = e.clientY;
-    const lensRadius = lens.offsetWidth / 2;
-
-    // 렌즈 위치 조정 (커서 중심 정렬)
-    lens.style.left = x - lensRadius + 'px';
-    lens.style.top = y - lensRadius + 'px';
-
-    // 배경 위치 조절 (배경 이미지가 200% 확대된 상태이므로 위치 계산)
-    lens.style.backgroundPosition = `calc(50% - ${
-      (x - lensRadius) * 2
-    }px) calc(50% - ${(y - lensRadius) * 2}px)`;
-
-    // 배경 이미지는 body와 동일하게 설정
-    lens.style.backgroundImage = getComputedStyle(
-      document.body
-    ).backgroundImage;
-
-    lens.style.opacity = 1;
+  $(document).on('mousemove', function (e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
   });
 
-  window.addEventListener('mouseleave', () => {
-    lens.style.opacity = 0;
-  });
+  function animate() {
+    // Lerp 보간값 (0.1이면 10%씩 부드럽게 이동)
+    currentX += (mouseX - currentX) * 0.1;
+    currentY += (mouseY - currentY) * 0.1;
+
+    $crosshair.css({
+      left: currentX + 'px',
+      top: currentY + 'px',
+    });
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
 });
