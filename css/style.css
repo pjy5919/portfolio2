@@ -135,7 +135,7 @@ nav {
   margin: 0 auto;
   width: 90%;
   height: 600px;
-  background-image: url('/image/kbt.png');
+  background-image: url('../image/kbt.png');
   background-repeat: no-repeat;
   overflow: hidden;
   border-radius: 15px;
