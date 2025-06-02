@@ -11,7 +11,6 @@ body {
   width: 100%;
   margin: 0;
   height: 100%;
-  background-color: #000;
 }
 
 .custom-cursor {
@@ -141,15 +140,15 @@ main {
   font-weight: 800;
   line-height: 180px;
   z-index: 10;
-  color: rgba(233, 233, 233, 0.199);
+  color: rgba(182, 182, 182, 0.199);
 }
 
 #maintext .big_txt .b_txt {
-  background: linear-gradient(to right, #ffffff, #ffffff) no-repeat;
+  background: linear-gradient(to right, #000000, #0077e7) no-repeat;
   -webkit-background-clip: text;
   background-clip: text;
   background-size: 0%;
-  transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 2s;
+  transition: background-size cubic-bezier(1, 1, 1, 1) 2s;
 }
 
 /* header */
