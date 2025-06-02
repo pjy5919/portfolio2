@@ -37,3 +37,31 @@ $(function () {
 
   animate();
 });
+
+gsap.registerPlugin(ScrollTrigger);
+
+// let panels = gsap.utils.toArray('#section');
+
+// panels.forEach((panel, i) => {
+//   ScrollTrigger.create({
+//     trigger: panel, // 트리거하는 요소
+//     start: 'top top', // 시작 위치
+//     pin: true, // 트리거 작동시 핀 고정
+//     scrub: 0.5, // 스크롤 속도
+//     pinSpacing: false, // 핀 지정 간격 자동
+//   });
+// });
+
+const textElements = gsap.utils.toArray('#maintext .b_txt');
+textElements.forEach((text) => {
+  gsap.to(text, {
+    backgroundSize: '100%',
+    ease: 'none',
+    scrollTrigger: {
+      trigger: text,
+      start: 'center 30%',
+      end: 'center 30%',
+      scrub: true,
+    },
+  });
+});
