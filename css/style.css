@@ -30,15 +30,6 @@ body {
   transform: translate(-50%, -50%);
   transition: left 0.1s ease, top 0.1s ease;
 }
-.iyFuQF {
-    --columns: 12;
-    --content-width: min(96%, 1840px);
-    --content: repeat(var(--columns), calc(var(--content-width) / var(--columns)));
-    display: grid
-;
-    grid-template-columns: 1fr var(--content) 1fr;
-    gap: 0px;
-}
 /* 화면 2배 길이로 충분히 길게 */
 .line-horizontal {
   position: absolute;
@@ -92,7 +83,7 @@ html {
 }
 html::selection {
   background: #25ff66;
-  color: #fff;
+  color: #333;
 }
 
 /* 시멘틱태그를 지원하지 않는 브라우저에서 inline로 인식하기 때문에 block로 변경해줌 */
