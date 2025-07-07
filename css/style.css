@@ -135,9 +135,8 @@ main {
 }
 
 #maintext .big_txt {
-  font-size: 4em;
+  font-size: 2em;
   font-weight: 800;
-  line-height: 180px;
   z-index: 10;
   color: rgba(182, 182, 182, 0.199);
 }
